@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6249840351127518055}
   - component: {fileID: 4566302504678170946}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: obstacle small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 6875104244524910443}
   - component: {fileID: 2941928802028597143}
   - component: {fileID: 2738991696159768960}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: meteorBrown_small1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

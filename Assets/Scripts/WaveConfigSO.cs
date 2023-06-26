@@ -7,6 +7,7 @@ public class WaveConfigSO : ScriptableObject
     [SerializeField]List<GameObject> obstaclePrefabs;
     [SerializeField] float spawnTime;
     [SerializeField] float spawnTimeVariance;
+    [SerializeField] float minSpawnTime;
     public int getObstacleCount()
     {
         return obstaclePrefabs.Count;
@@ -15,5 +16,9 @@ public class WaveConfigSO : ScriptableObject
     {
         return obstaclePrefabs[index];
     }
-    
+    public float getRandomSpawnTime()
+    {
+        float randomTime = Random.Range(spawnTime - spawnTimeVariance, spawnTime + spawnTimeVariance);
+        return Mathf.Clamp(spawnTime, minSpawnTime, float.MaxValue);
+    }
 }
