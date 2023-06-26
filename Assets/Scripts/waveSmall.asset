@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6181e02ba5febb64995bc825d9d6e17e, type: 3}
-  m_Name: new Wave Config
+  m_Name: waveSmall
   m_EditorClassIdentifier: 
   obstaclePrefabs:
-  - {fileID: 8144737031034821517, guid: 4f5ff6bc64153e24289208a927c38808, type: 3}
+  - {fileID: 2339576684707696170, guid: 108b688dc70e90c4c86421ea7528557f, type: 3}
+  spawnTime: 4
+  spawnTimeVariance: 0.5
+  minSpawnTime: 3
+  firstWaiting: 0

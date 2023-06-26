@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     [SerializeField] float projectileSpeed=10f;
-    [SerializeField] float projectileLifeTime = 5f;
+    [SerializeField] float projectileLifeTime = 2f;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float firingRate = 0.2f;
     Coroutine firingcoroitine;
@@ -22,12 +22,15 @@ public class Shooter : MonoBehaviour
     }
     void fire()
     {
-        if (isFiring && firingcoroitine==null)
+        if (Input.GetKeyDown("space")&&firingcoroitine==null)
         {
             firingcoroitine = StartCoroutine(fireContinuously());
+            
+            
         }
-        else if(!isFiring && firingcoroitine != null)
+        else if(firingcoroitine!=null)
         {
+            
             StopCoroutine(firingcoroitine);
             firingcoroitine = null;
         }
@@ -46,4 +49,5 @@ public class Shooter : MonoBehaviour
             yield return new WaitForSeconds(firingRate);
         }
     }
+    
 }

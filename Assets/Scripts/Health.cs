@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float health;
+    [SerializeField] bool isBig;
+    [SerializeField] bool isMid;
+    [SerializeField] bool isSmall;
+    [SerializeField] WaveConfigSO nextObstacle;
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        health--;
+        if (health <= 0&& isSmall)
+        {
+            Destroy(gameObject);
+        }else if ( health<=0&& isMid)
+        {
+            Instantiate(nextObstacle.getObstaclePrefab(0), transform.position, Quaternion.identity);
+            Instantiate(nextObstacle.getObstaclePrefab(0), transform.position, Quaternion.identity);
+            isMid = false;
+            isSmall = true;
+        }else if (health <= 0 && isBig)
+        {
+            Instantiate(nextObstacle.getObstaclePrefab(0), transform.position, Quaternion.identity);
+            Instantiate(nextObstacle.getObstaclePrefab(0), transform.position, Quaternion.identity);
+            isBig = false;
+            isMid = true;
+        }
     }
 }
