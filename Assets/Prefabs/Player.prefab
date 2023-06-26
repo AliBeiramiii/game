@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3030030490559376206}
   - component: {fileID: 8199842241278701560}
+  - component: {fileID: 8607315522286955158}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -63,6 +64,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8607315522286955158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699000417001327511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3108e7d4d4a4a114081f2fefe3ec6653, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  moveSpeed: 0.01
 --- !u!1 &3959731107510021379
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +88,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6086718935617911327}
   - component: {fileID: 4441342720030770659}
-  - component: {fileID: 3156073674064869439}
   m_Layer: 0
   m_Name: playerShip1_blue
   m_TagString: Untagged
@@ -148,15 +162,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3156073674064869439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3959731107510021379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f88815672fcddb84db7340ecfb6d1aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
