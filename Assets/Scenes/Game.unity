@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 277107389}
   m_Layer: 0
   m_Name: collider
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,10 +190,10 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -1.613153, y: 3.2120504}
-  - {x: 0.5020584, y: -1.2467651}
-  - {x: 0.50324535, y: 392.97906}
-  - {x: -1.609945, y: 391.2604}
+  - {x: -1.604462, y: 41.974976}
+  - {x: 0.50220275, y: 36.8494}
+  - {x: 0.503096, y: 353.56924}
+  - {x: -1.6100807, y: 355.46475}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 1808929709}
   m_Layer: 0
   m_Name: grid
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -522,7 +522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1824800672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3470764, y: 1.9812483, z: -5.1289463}
+  m_LocalPosition: {x: 3.46, y: 8.62, z: -5.1289463}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2463400857949733161, guid: bf4790e075f107546b084d157768cafe, type: 3}
+      propertyPath: isPlane
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3030030490559376206, guid: bf4790e075f107546b084d157768cafe, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -570,7 +574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3030030490559376206, guid: bf4790e075f107546b084d157768cafe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.59
+      value: -7.97
       objectReference: {fileID: 0}
     - target: {fileID: 3030030490559376206, guid: bf4790e075f107546b084d157768cafe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -608,6 +612,10 @@ PrefabInstance:
       propertyPath: m_Actions
       value: 
       objectReference: {fileID: -944628639613478452, guid: 4d421851b2c9e4e49b6070e419512103, type: 3}
+    - target: {fileID: 8199842241278701560, guid: bf4790e075f107546b084d157768cafe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8199842241278701560, guid: bf4790e075f107546b084d157768cafe, type: 3}
       propertyPath: m_DefaultActionMap
       value: Player

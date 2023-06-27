@@ -15,8 +15,11 @@ public class EnemySpawner : MonoBehaviour
         while (isLooping)
         {
             yield return new WaitForSeconds(currentWave.getFirstWaiting());
-                Vector2 randomPosittion = new Vector2(Random.Range(-3f, 3f), 10);
-                Instantiate(currentWave.getObstaclePrefab(0), randomPosittion, Quaternion.identity);
+            Vector2 randomPosittion = new Vector2(Random.Range(-2f, 2f), 10);
+            GameObject obj=Instantiate(currentWave.getObstaclePrefab(0), randomPosittion, Quaternion.identity);
+            Rigidbody2D rigidBody = obj.GetComponent<Rigidbody2D>();
+            Vector2 throwDirection = new Vector2(randomPosittion.x, 0);
+            rigidBody.AddForce(throwDirection*100);
                 yield return new WaitForSeconds(currentWave.getRandomSpawnTime());
             
 

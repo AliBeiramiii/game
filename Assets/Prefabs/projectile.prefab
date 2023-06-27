@@ -109,7 +109,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0ae272c06403545a03a3aa666634f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 1
+  isBig: 0
+  isMid: 0
+  isSmall: 0
+  isBullet: 1
+  isPlane: 0
+  nextObstacle: {fileID: 0}
 --- !u!1 &3966666094227125855
 GameObject:
   m_ObjectHideFlags: 0

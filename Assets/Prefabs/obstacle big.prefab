@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 7510360821223294586}
   - component: {fileID: 6452519256743487943}
   - component: {fileID: -6276493583928852626}
+  - component: {fileID: 1660654162712265776}
   m_Layer: 7
   m_Name: obstacle big
   m_TagString: Obstacle
@@ -104,8 +105,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2776476080210751195
-Transform:
+--- !u!224 &2776476080210751195
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -120,6 +121,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &6532846194846318231
 Rigidbody2D:
   serializedVersion: 4
@@ -293,4 +299,19 @@ MonoBehaviour:
   isBig: 1
   isMid: 0
   isSmall: 0
+  isBullet: 0
+  isPlane: 0
   nextObstacle: {fileID: 11400000, guid: ece89c16511f61240a61917adfdb92fb, type: 2}
+--- !u!114 &1660654162712265776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8144737031034821517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa407cd855b184f4aa37bd62df742397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: {fileID: 0}
