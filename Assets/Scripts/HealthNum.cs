@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class HealthNum : MonoBehaviour
 {
-    public TextMesh output;
-    public void awake()
-    {
-        output = GetComponent<TextMesh>();
-    }
+    [SerializeField]Text textHealth;
     Health health;
-    void Awake()
+     void start()
     {
-        health = GetComponent<Health>();
-    }   
-    public void show()
+        health = GetComponentInParent<Health>();
+    }
+     void Update()
     {
-        output.text = ""+health.getHealth();
+        if (health != null)
+        {
+            textHealth.text = health.getHealth().ToString();
+        }
     }
 }
+

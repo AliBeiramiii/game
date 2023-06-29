@@ -11,6 +11,8 @@ public class player : MonoBehaviour
     [SerializeField] float paddingRight;
     [SerializeField] float paddingTop;
     [SerializeField] float paddingBotton;
+    [SerializeField] float shieldTimer=10f;
+    [SerializeField] GameObject shield;
     Shooter shooter;
 
     Vector2 minBounds;
@@ -53,4 +55,22 @@ public class player : MonoBehaviour
     //   shooter.isFiring = value.IsPressed();
     //}
     //}
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PowerUp")
+        {
+            CountDown countDown = collision.GetComponent<CountDown>();
+            shieldOn();
+            //countDown.showCountDown(shieldTimer);
+            Destroy(collision.gameObject);
+            
+            
+        }
+    }
+    void shieldOn()
+    {
+        Vector2 shieldPos = new Vector2(0f,-9f);
+        GameObject obj = Instantiate(shield,shieldPos, Quaternion.identity);
+        Destroy(obj, shieldTimer);
+    }
 }

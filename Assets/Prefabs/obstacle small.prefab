@@ -122,7 +122,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2339576684707696170}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 6200000, guid: fa090f89ae0327f4aaf0c66625f64abd, type: 2}
   m_IncludeLayers:
@@ -183,6 +183,9 @@ MonoBehaviour:
   isBig: 0
   isMid: 0
   isSmall: 1
+  isBullet: 0
+  isPlane: 0
+  isShield: 0
   nextObstacle: {fileID: 0}
 --- !u!1 &5917937584538028841
 GameObject:

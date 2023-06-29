@@ -147,7 +147,8 @@ MonoBehaviour:
   isMid: 0
   isSmall: 0
   isBullet: 0
-  isPlane: 0
+  isPlane: 1
+  isShield: 0
   nextObstacle: {fileID: 0}
 --- !u!60 &1105527645473919094
 PolygonCollider2D:

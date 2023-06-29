@@ -9,7 +9,13 @@ public class Shooter : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float firingRate = 0.2f;
     Coroutine firingcoroitine;
+    AudioPlayer audioPlayer;
+
     public bool isFiring;
+     void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
     void Start()
     {
         
@@ -41,13 +47,14 @@ public class Shooter : MonoBehaviour
         {
             
             GameObject instance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Debug.Log(transform.position);
+             
             Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
             if(rb!=null)
             {
                 rb.velocity = transform.up * projectileSpeed;
             }
             Destroy(instance, projectileLifeTime);
+            audioPlayer.playShootingClip();
             yield return new WaitForSeconds(firingRate);
         }
     }
