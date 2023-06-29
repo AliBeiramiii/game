@@ -8,13 +8,16 @@ public class Shooter : MonoBehaviour
     [SerializeField] float projectileLifeTime = 2f;
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] float firingRate = 0.2f;
+                     float nextFire;
     Coroutine firingcoroitine;
     AudioPlayer audioPlayer;
+    InputManager input;
 
     public bool isFiring;
      void Awake()
     {
         audioPlayer = FindObjectOfType<AudioPlayer>();
+        input = GetComponent<InputManager>();
     }
     void Start()
     {
@@ -28,35 +31,50 @@ public class Shooter : MonoBehaviour
     }
     void fire()
     {
-        if (Input.GetKeyDown("space")&&firingcoroitine==null)
+        if (input.fire&&Time.time>nextFire)
         {
-            firingcoroitine = StartCoroutine(fireContinuously());
-            
-            
-        }
-        else if(firingcoroitine!=null)
-        {
-            
-            StopCoroutine(firingcoroitine);
-            firingcoroitine = null;
-        }
-    }
-    IEnumerator fireContinuously()
-    {
-        while (true)
-        {
-            
+            nextFire = Time.time + firingRate;
             GameObject instance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-             
+
             Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
             if(rb!=null)
             {
-                rb.velocity = transform.up * projectileSpeed;
+            rb.velocity = transform.up * projectileSpeed;
             }
-            Destroy(instance, projectileLifeTime);
-            audioPlayer.playShootingClip();
-            yield return new WaitForSeconds(firingRate);
+             Destroy(instance, projectileLifeTime);
+               audioPlayer.playShootingClip();
         }
     }
+  //  {
+        //if (input.fire&&firingcoroitine==null)
+      ///  {
+        //    firingcoroitine = StartCoroutine(fireContinuously());
+            
+            
+      //  }
+        //else if(firingcoroitine!=null)
+        //{
+            
+            //StopCoroutine(firingcoroitine);
+          //  firingcoroitine = null;
+        //}
+    //}
+    //IEnumerator fireContinuously()
+    //{
+        //while (true)
+        //{
+            
+            //GameObject instance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+             
+            //Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
+            //if(rb!=null)
+            //{
+                //rb.velocity = transform.up * projectileSpeed;
+            //}
+           // Destroy(instance, projectileLifeTime);
+         //   audioPlayer.playShootingClip();
+       //     yield return new WaitForSeconds(firingRate);
+     //   }
+   // }
     
 }

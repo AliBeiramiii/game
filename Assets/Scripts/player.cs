@@ -5,21 +5,27 @@ using UnityEngine.InputSystem;
 
 public class player : MonoBehaviour
 {
+    bool movePlayer;
     [SerializeField] float moveSpead = 5f;
-    Vector2 rawInput;
+    //Vector2 rawInput;
     [SerializeField] float paddingLeft;
     [SerializeField] float paddingRight;
     [SerializeField] float paddingTop;
     [SerializeField] float paddingBotton;
     [SerializeField] float shieldTimer=10f;
     [SerializeField] GameObject shield;
-    Shooter shooter;
+    InputManager inputManager;
+    //Shooter shooter;
 
     Vector2 minBounds;
     Vector2 maxBounds;
-    void Awake()
+    /*void Awake()
     {
         shooter = GetComponent<Shooter>();
+    }*/
+    private void Awake()
+    {
+        inputManager = GetComponent<InputManager>();
     }
     void Start()
     {
@@ -37,24 +43,19 @@ public class player : MonoBehaviour
     }
     void move()
     {
-        Vector3 delta = rawInput * moveSpead * Time.deltaTime;
+        Vector3 delta = inputManager.inputVector * moveSpead * Time.deltaTime;
         Vector2 newPos = new Vector2();
         newPos.x = Mathf.Clamp(transform.position.x + delta.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
         newPos.y = Mathf.Clamp(transform.position.y + delta.y, minBounds.y + paddingBotton, maxBounds.y - paddingTop);
         transform.position = newPos;
     }
-    void OnMove(InputValue value)
+
+    /*void OnMove(InputValue value)
     {
         rawInput = value.Get<Vector2>();
 
     }
-    // void onFire(InputAction value)  
-    //{
-    //  if (shooter != null)
-    //{
-    //   shooter.isFiring = value.IsPressed();
-    //}
-    //}
+*/
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "PowerUp")
@@ -69,7 +70,7 @@ public class player : MonoBehaviour
     }
     void shieldOn()
     {
-        Vector2 shieldPos = new Vector2(0f,-9f);
+        Vector2 shieldPos = new Vector2(0f,-11f);
         GameObject obj = Instantiate(shield,shieldPos, Quaternion.identity);
         Destroy(obj, shieldTimer);
     }
