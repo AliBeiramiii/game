@@ -13,6 +13,7 @@ public class player : MonoBehaviour
     [SerializeField] float paddingTop;
     [SerializeField] float paddingBotton;
     [SerializeField] float shieldTimer=10f;
+    //[SerializeField] float slowModeTimer = 10f;
     [SerializeField] GameObject shield;
     InputManager inputManager;
     //Shooter shooter;
