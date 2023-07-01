@@ -28,6 +28,7 @@ public class UIDisplay : MonoBehaviour
     void Update()
     {
         healthSlider.value = playerHealth.getHealth();
-        scoreText.text = scorekeeper.getScore().ToString("000000000"); 
+        scoreText.text = scorekeeper.getScore().ToString("000000000");
+        failGameScore.text = scorekeeper.getScore().ToString();
     }
 }
