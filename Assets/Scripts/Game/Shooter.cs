@@ -45,6 +45,10 @@ public class Shooter : MonoBehaviour
                audioPlayer.playShootingClip();
         }
     }
+    public void setFireRate(float newFireRate)
+    {
+        firingRate += newFireRate;
+    }
   //  {
         //if (input.fire&&firingcoroitine==null)
       ///  {
