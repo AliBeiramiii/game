@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class SettingManager : MonoBehaviour
 {
     public GameObject settingUI;
     public GameObject mainMenuUI;
-    
+    public AudioMixer audioMixer;
     
 
     
@@ -33,6 +34,6 @@ public class SettingManager : MonoBehaviour
     }
     public void SetVolume(float volume)
     {
-        Sebug.Log(volume);
+        audioMixer.SetFloat("volume", volume);
     }
 }
