@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     [SerializeField] bool isPlane;
     [SerializeField] int score;
     [SerializeField] WaveConfigSO nextObstacle;
+    [SerializeField] GameManager gameManager;
     AudioPlayer audioPlayer;
     Scores scoreKeeper;
     void Awake()
@@ -37,6 +38,8 @@ public class Health : MonoBehaviour
                 audioPlayer.playCrashingClip();
                 if (!isPlane&&score>7)
                     scoreKeeper.ModifyScore(score);
+                if (isPlane)
+                    gameManager.gameOver();
                 Destroy(gameObject);
             }
             else if ((collision.gameObject.tag == "Player" || collision.gameObject.tag == "Obstacle")
