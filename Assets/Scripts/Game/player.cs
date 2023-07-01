@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class player : MonoBehaviour
 {
     bool movePlayer;
-    [SerializeField] float moveSpead = 5f;
+    [SerializeField] float moveSpeed = 5f;
     //Vector2 rawInput;
     [SerializeField] float paddingLeft;
     [SerializeField] float paddingRight;
@@ -44,7 +44,7 @@ public class player : MonoBehaviour
     }
     void move()
     {
-        Vector3 delta = inputManager.inputVector * moveSpead * Time.deltaTime;
+        Vector3 delta = inputManager.inputVector * moveSpeed * Time.deltaTime;
         Vector2 newPos = new Vector2();
         newPos.x = Mathf.Clamp(transform.position.x + delta.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
         newPos.y = Mathf.Clamp(transform.position.y + delta.y, minBounds.y + paddingBotton, maxBounds.y - paddingTop);
@@ -57,6 +57,10 @@ public class player : MonoBehaviour
 
     }
 */
+    public void addSpeed(float newSpeed)
+    {
+        moveSpeed += newSpeed;
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "PowerUp")
