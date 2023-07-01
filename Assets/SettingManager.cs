@@ -31,4 +31,8 @@ public class SettingManager : MonoBehaviour
         //mainMenuUI.SetActive(false);
         SceneManager.LoadScene("Game");
     }
+    public void SetVolume(float volume)
+    {
+        Sebug.Log(volume);
+    }
 }
